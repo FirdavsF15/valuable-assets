@@ -5,6 +5,10 @@ public class SavingsAccount implements BankAccount{
     double balance;
     private static double interestRate = .033;
 
+    public SavingsAccount(double balance) {
+        this.balance = balance;
+    }
+
     @Override
     public void deposit(double amount) {
         balance = balance + amount;
