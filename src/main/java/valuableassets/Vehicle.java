@@ -15,7 +15,14 @@ public abstract class Vehicle implements Valuable {
         this.currentMileage = initialMileage;
     }
 
+    public void drive(int miles){
+        currentMileage = currentMileage + miles;
+    }
 
+    @Override
+    public double getValue() {
+        int mileDiff = currentMileage - initialMileage;
 
-
+        return initialCost - (DEPRECIATION_PER_MILE * mileDiff);
+    }
 }
